@@ -1,0 +1,126 @@
+/* css reset */
+* {
+  box-sizing: border-box;
+  border: none;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* style */
+body {
+  background: #EEE;
+}
+
+.globalHeader .searchForm {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.globalHeader .searchForm > input {
+  width: 100%;
+  margin-right: 10px;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.globalHeader .searchForm > button {
+  white-space: nowrap;
+  padding: 0 18px;
+  border-radius: 4px;
+  background: #04AADE;
+  color: white;
+  font-size: 16px;
+}
+
+.globalMain .siteList {
+  margin: 35px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.globalMain .siteList > li {
+  margin-bottom: 20px;
+}
+
+.globalMain .siteList > li .site {
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px 0;
+}
+
+.globalMain .siteList > li .site .logo {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 64px;
+}
+
+.globalMain .siteList > li .site .link {
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.globalMain .siteList .addButton {
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px 0;
+}
+
+.globalMain .siteList .addButton .icon-wrapper {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.globalMain .siteList .addButton .icon-wrapper .icon {
+  width: 56px;
+  height: 56px;
+}
+
+.globalMain .siteList .addButton .text {
+  font-size: 14px;
+  margin-top: 6px;
+}
