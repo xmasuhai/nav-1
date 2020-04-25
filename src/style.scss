@@ -54,7 +54,6 @@ body {
 
 .globalHeader {
   margin: 20px;
-
   .searchForm {
     display: flex;
     justify-content: space-between;
@@ -85,11 +84,11 @@ body {
     }
   }
   /*
-    @media (max-width: 500px){ // 500px以上不管
-      .searchForm{
-        background-color: red;
-      }
+  @media (max-width: 500px){ // 500px以上不管
+    .searchForm{
+      background-color: red;
     }
+  }
   */
 }
 @media (min-width: 500px){
@@ -102,19 +101,15 @@ body {
   max-width:900px;
   margin-left: auto;
   margin-right: auto;
-
-
   .siteList {
     margin: 20px;
     display: flex;
     flex-wrap: wrap;
-    //justify-content: space-between;
-
+    justify-content: space-between;
     >li {
       margin-bottom: 20px;
-      margin-right: 25px;
-
       .site {
+        cursor: pointer;
         @extend %block;
         .logo {
           width: 64px;
@@ -129,9 +124,18 @@ body {
           @extend %text;
         }
         .close{
+          //cursor: default;
           position: absolute;
           right: 10px;
           top: 5px;
+          visibility: hidden;
+          opacity:0;
+        }
+        // site:hover
+        &:hover > .close{
+          visibility: visible;
+          opacity: 1;
+          transition: all 1s;
         }
       }
     }
@@ -158,6 +162,10 @@ body {
     .siteList {
       margin-left: auto;
       margin-right: -25px;
+      justify-content: flex-start;
+      >li{
+        margin-right: 25px;
+      }
     }
   }
 }

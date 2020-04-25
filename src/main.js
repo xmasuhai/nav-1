@@ -89,3 +89,24 @@ window.onbeforeunload = () => {
   // console.log(string)
   localStorage.setItem('x', string)
 }
+
+// 监听键盘事件
+$(document).on('keypress',(e)=> {
+  // console.log(e.keyCode)
+  // console.log(e.key)
+  /*
+  const key = e.key
+  变量名 和 属性名一样
+  可以简写为
+  const {key} = e
+  解构赋值
+  */
+  const {key} = e;
+  console.log(key);
+  for (let i = 0; i < hashMap.length; i++) {
+    if(hashMap[i].logo.toLowerCase() === key){
+      console.log(hashMap[i].logo)
+      window.open(hashMap[i].url)
+    }
+  }
+})
