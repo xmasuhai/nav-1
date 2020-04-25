@@ -219,6 +219,10 @@ $(document).on('keypress', function (e) {
       window.open(hashMap[i].url);
     }
   }
+}); // 搜索框 键盘事件 阻止冒泡
+
+$('.searchForm').on('keypress', function (e) {
+  e.stopPropagation();
 });
 },{}],"C:/Users/Xmasu/AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
