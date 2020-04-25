@@ -102,10 +102,10 @@ $(document).on('keypress',(e)=> {
   解构赋值
   */
   const {key} = e;
-  console.log(key);
+  // console.log(key);
   for (let i = 0; i < hashMap.length; i++) {
     if(hashMap[i].logo.toLowerCase() === key){
-      console.log(hashMap[i].logo)
+      // console.log(hashMap[i].logo)
       window.open(hashMap[i].url)
     }
   }
