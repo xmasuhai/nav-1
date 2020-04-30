@@ -117,125 +117,16 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"main.js":[function(require,module,exports) {
-var $siteList = $('.siteList');
-var $lastLi = $siteList.find('li.last');
-/* 初始时从  LocalStorage 中读取对应的 hash  */
+})({"search.js":[function(require,module,exports) {
+$(document).ready(function () {
+  var url = $.url();
+  var query = url.param("q");
 
-var x = localStorage.getItem('x') || 'null'; // 将读取的字符串 变为 对象
-
-var xObject = JSON.parse(x); // hashMap 初始化保底值
-
-var hashMap = xObject || [{
-  logo: 'A',
-  url: 'https://www.acfun.cn',
-  logoICO: 'https://www.acfun.cn/favicon.ico'
-}, {
-  logo: 'B',
-  url: 'https://www.bilibili.com',
-  logoICO: 'https://www.bilibili.com/favicon.ico'
-}];
-/* 显示链接 缩短 */
-
-var simplifyUrl = function simplifyUrl(url) {
-  return url.replace('https://', '').replace('http://', '').replace('www.', '').replace(/\/.*/, ''); // 删除以 / 开头的内容 贪婪匹配
-};
-/* 操作 hashMap 渲染页面 */
-
-
-var render = function render() {
-  /*  再次渲染 hashMap 之前必须先 清空原来的 */
-  // 找到 的除了 lastLi 之外的所有 li
-  $siteList.find('li:not(.last)').remove();
-  hashMap.forEach(function (node, index) {
-    // console.log(node.logoICO)
-    var showLogo = "<img src = ".concat(node.logoICO, ">");
-    var $li = $("\n        <li>\n          <div class=\"site\">\n            <div class=\"logo\">".concat(showLogo, "</div>\n            <div class=\"link\">").concat(simplifyUrl(node.url), "</div>\n            <div class=\"close\">\n              <svg class=\"icon\">\n                <use xlink:href=\"#icon-close\"></use>\n              </svg>\n            </div>\n          </div>\n        </li>\n  ")).insertBefore($lastLi); // 用JS操作 点击跳转
-
-    $li.on('click', function () {
-      // console.log(node.url);
-      window.open(node.url, '_self');
-    }); // 阻止冒泡
-
-    $li.on('click', '.close', function (e) {
-      // console.log('阻止冒泡')
-      e.stopPropagation(); // console.log(hashMap);
-      // console.log(index);
-
-      hashMap.splice(index, 1);
-      render();
-    });
-  });
-};
-
-render();
-/* 事件处理 */
-
-$('.addButton').on('click', function () {
-  var url = window.prompt("请输入网址");
-  /* 网址合法行判断 */
-
-  if (url.indexOf("www.") !== 0 && url.indexOf("http") !== 0) {
-    url = 'www.' + url;
-    console.log(url);
+  if (typeof query != 'undefined') {
+    $("#left").attr("src", "https://www.bing.com/search?q=" + encodeURIComponent(query));
+    $("#right").attr("src", "https://www.google.com/search?q=" + encodeURIComponent(query));
+    document.title = query.replace(/</g, "&lt;").replace(/>/g, "&gt;") + " - Double Shot Search";
   }
-
-  if (url.indexOf("http") !== 0) {
-    url = 'https://' + url;
-    console.log(url);
-  } // console.log(url)
-
-
-  hashMap.push({
-    logo: simplifyUrl(url)[0].toUpperCase(),
-    url: url,
-    logoICO: url + '/favicon.ico'
-  });
-  render();
-}); // 获取焦点
-
-window.onload = function () {
-  // $('.searchInput').focus() <input autofocus>
-  $('.searchForm').attr("action", "./search.html/s");
-}; // 退出网站 用户关闭网站前触发 存到 localStorage 里
-
-
-window.onbeforeunload = function () {
-  // console.log('页面要关闭了') // 可以开启 Preserve log 查看
-  // // 将 对象变为 字符串
-  var string = JSON.stringify(hashMap); // console.log(typeof hashMap)
-  // console.log(hashMap)
-  // console.log(typeof string)
-  // console.log(string)
-
-  localStorage.setItem('x', string);
-}; // 监听键盘事件 点击跳转相应网站
-
-
-$(document).on('keypress', function (e) {
-  // console.log(e.keyCode)
-  // console.log(e.key)
-
-  /*
-  const key = e.key
-  变量名 和 属性名一样
-  可以简写为
-  const {key} = e
-  解构赋值
-  */
-  var key = e.key; // console.log(key);
-
-  for (var i = 0; i < hashMap.length; i++) {
-    if (hashMap[i].logo.toLowerCase() === key) {
-      // console.log(hashMap[i].logo)
-      // location.href = hashMap[i].url // 模拟用户在地址栏输入
-      window.open(hashMap[i].url, '_blank');
-    }
-  }
-}); // 搜索框 键盘事件 阻止冒泡
-
-$('.searchForm').on('keypress', function (e) {
-  e.stopPropagation();
 });
 },{}],"C:/Users/Xmasu/AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -441,5 +332,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["C:/Users/Xmasu/AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js","main.js"], null)
-//# sourceMappingURL=/main.1f19ae8e.js.map
+},{}]},{},["C:/Users/Xmasu/AppData/Roaming/npm/node_modules/parcel/src/builtins/hmr-runtime.js","search.js"], null)
+//# sourceMappingURL=/search.475a728d.js.map

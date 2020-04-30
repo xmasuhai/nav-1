@@ -29,6 +29,11 @@ img {
   max-height: 100%;
 }
 
+.logo img {
+  min-width: 3.5rem;
+  min-height: 3.5rem;
+}
+
 /* var placeholder */
 %block {
   width: 160px;
@@ -42,6 +47,7 @@ img {
   padding: 20px 0;
   position: relative;
 }
+
 %text {
   font-size: 14px;
   margin-top: 6px;
@@ -54,6 +60,7 @@ body {
 
 .globalHeader {
   margin: 20px;
+
   .searchForm {
     display: flex;
     justify-content: space-between;
@@ -71,18 +78,23 @@ body {
       white-space: nowrap;
       padding: 0 28px;
       border-radius: 4px; // button 默认有border样式 reset 里设置none
-      background: #04AADE;
+      background: rgb(0, 131, 115);
+      background: linear-gradient(90deg, rgba(0, 131, 115, 1) 0%, rgba(66, 133, 244, 1) 100%);
       color: white;
       font-size: 16px;
     }
   }
-  @media (min-width: 500px) { // 500px以下不管
+
+  @media (min-width: 500px) {
+
+    // 500px以下不管
     .searchForm {
       max-width: 400px;
       margin-left: auto;
       margin-right: auto;
     }
   }
+
   /*
   @media (max-width: 500px){ // 500px以上不管
     .searchForm{
@@ -91,26 +103,31 @@ body {
   }
   */
 }
-@media (min-width: 500px){
-  .globalHeader{
+
+@media (min-width: 500px) {
+  .globalHeader {
     margin: 60px 0;
   }
 }
 
 .globalMain {
-  max-width:900px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+
   .siteList {
     margin: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
     >li {
       margin-bottom: 20px;
+
       .site {
         cursor: pointer;
         @extend %block;
+
         .logo {
           width: 64px;
           height: 64px;
@@ -120,19 +137,22 @@ body {
           font-size: 64px;
           text-transform: uppercase;
         }
+
         .link {
           @extend %text;
         }
-        .close{
+
+        .close {
           //cursor: default;
           position: absolute;
           right: 10px;
           top: 5px;
           visibility: hidden;
-          opacity:0;
+          opacity: 0;
         }
+
         // site:hover
-        &:hover > .close{
+        &:hover>.close {
           visibility: visible;
           opacity: 1;
           transition: all 1s;
@@ -142,30 +162,60 @@ body {
 
     .addButton {
       @extend %block;
+
       .icon-wrapper {
         width: 64px;
         height: 64px;
         display: flex;
         justify-content: center;
         align-items: center;
+
         .icon {
           width: 56px;
           height: 56px;
         }
       }
+
       .text {
         @extend %text;
       }
     }
   }
+
   @media (min-width: 500px) {
     .siteList {
       margin-left: auto;
       margin-right: -25px;
       justify-content: flex-start;
-      >li{
+
+      >li {
         margin-right: 25px;
       }
     }
   }
+}
+
+/* special */
+
+body::before {
+  content: "";
+  position: fixed;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+
+div.site {
+  color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 1.5px #000;
+  cursor: default;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+div.site:hover {
+  color: rgba(0, 0, 0, 1);
+  text-shadow: none;
 }

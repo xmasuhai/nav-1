@@ -48,11 +48,11 @@ body {
 .globalHeader {
   margin: 20px;
   /*
-    @media (max-width: 500px){ // 500px以上不管
-      .searchForm{
-        background-color: red;
-      }
+  @media (max-width: 500px){ // 500px以上不管
+    .searchForm{
+      background-color: red;
     }
+  }
   */ }
   .globalHeader .searchForm {
     display: flex;
@@ -68,7 +68,8 @@ body {
       white-space: nowrap;
       padding: 0 28px;
       border-radius: 4px;
-      background: #04AADE;
+      background: #008373;
+      background: linear-gradient(90deg, #008373 0%, #4285f4 100%);
       color: white;
       font-size: 16px; }
   @media (min-width: 500px) {
@@ -88,22 +89,30 @@ body {
   .globalMain .siteList {
     margin: 20px;
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    justify-content: space-between; }
     .globalMain .siteList > li {
-      margin-bottom: 20px;
-      margin-right: 25px; }
-      .globalMain .siteList > li .site .logo {
-        width: 64px;
-        height: 64px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 64px;
-        text-transform: uppercase; }
-      .globalMain .siteList > li .site .close {
-        position: absolute;
-        right: 10px;
-        top: 5px; }
+      margin-bottom: 20px; }
+      .globalMain .siteList > li .site {
+        cursor: pointer; }
+        .globalMain .siteList > li .site .logo {
+          width: 64px;
+          height: 64px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 64px;
+          text-transform: uppercase; }
+        .globalMain .siteList > li .site .close {
+          position: absolute;
+          right: 10px;
+          top: 5px;
+          visibility: hidden;
+          opacity: 0; }
+        .globalMain .siteList > li .site:hover > .close {
+          visibility: visible;
+          opacity: 1;
+          transition: all 1s; }
     .globalMain .siteList .addButton .icon-wrapper {
       width: 64px;
       height: 64px;
@@ -116,7 +125,10 @@ body {
   @media (min-width: 500px) {
     .globalMain .siteList {
       margin-left: auto;
-      margin-right: -25px; } }
+      margin-right: -25px;
+      justify-content: flex-start; }
+      .globalMain .siteList > li {
+        margin-right: 25px; } }
 
 
-/*# sourceMappingURL=style.237d541f.css.map */
+/*# sourceMappingURL=style.251405b2.css.map */

@@ -185,7 +185,13 @@ $('.addButton').on('click', function () {
     url: url
   });
   render();
-}); // 退出网站 用户关闭网站钱触发 存到 localStorage 里
+}); // 获取焦点
+
+window.onload = function () {
+  // $('.searchInput').focus() <input autofocus>
+  $('.searchForm').attr("action", "./search.html/s");
+}; // 退出网站 用户关闭网站前触发 存到 localStorage 里
+
 
 window.onbeforeunload = function () {
   // console.log('页面要关闭了') // 可以开启 Preserve log 查看
@@ -196,7 +202,7 @@ window.onbeforeunload = function () {
   // console.log(string)
 
   localStorage.setItem('x', string);
-}; // 监听键盘事件
+}; // 监听键盘事件 点击跳转相应网站
 
 
 $(document).on('keypress', function (e) {
@@ -215,7 +221,8 @@ $(document).on('keypress', function (e) {
   for (var i = 0; i < hashMap.length; i++) {
     if (hashMap[i].logo.toLowerCase() === key) {
       // console.log(hashMap[i].logo)
-      window.open(hashMap[i].url);
+      // location.href = hashMap[i].url // 模拟用户在地址栏输入
+      window.open(hashMap[i].url, '_blank');
     }
   }
 }); // 搜索框 键盘事件 阻止冒泡
@@ -224,4 +231,4 @@ $('.searchForm').on('keypress', function (e) {
   e.stopPropagation();
 });
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.4670afb7.js.map
+//# sourceMappingURL=main.26594e1f.js.map
