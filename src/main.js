@@ -84,7 +84,7 @@ $('.addButton').on('click', () => {
 // 获取焦点
 window.onload = () => {
   // $('.searchInput').focus() <input autofocus>
-  $('.searchForm').attr("action", "./search.html/s")
+  $('.searchForm').attr("action", "https://baidu.com/s")
 }
 
 // 退出网站 用户关闭网站前触发 存到 localStorage 里

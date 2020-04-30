@@ -196,7 +196,7 @@ $('.addButton').on('click', function () {
 
 window.onload = function () {
   // $('.searchInput').focus() <input autofocus>
-  $('.searchForm').attr("action", "./search.html/s");
+  $('.searchForm').attr("action", "https://baidu.com/s");
 }; // 退出网站 用户关闭网站前触发 存到 localStorage 里
 
 
@@ -238,4 +238,4 @@ $('.searchForm').on('keypress', function (e) {
   e.stopPropagation();
 });
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.1c37090c.js.map
+//# sourceMappingURL=main.c0b05a6a.js.map

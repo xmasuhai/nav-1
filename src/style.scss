@@ -41,7 +41,6 @@ img {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 20px 0;
@@ -56,6 +55,7 @@ img {
 /* style */
 body {
   background: #EEE; // 颜色会扩展至整个网页
+  background-image: url(images/bgp.png);
 }
 
 .globalHeader {
@@ -208,14 +208,39 @@ body::before {
   z-index: 100;
 }
 
-div.site {
+div.site,
+div.addButton {
+  z-index: 1;
   color: rgba(0, 0, 0, 0);
-  text-shadow: 0 0 1.5px #000;
+  text-shadow: 0 0 1px #000;
   cursor: default;
   transition: color 0.3s ease, text-shadow 0.3s ease;
+  background-position: center top;
+  background-size: cover;
+  overflow: hidden;
+}
+
+div.site:after,
+div.addButton:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: -1;
+  // background-image: url(images/bgp.png);
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+  filter: blur(20px);
+  margin: -30px;
 }
 
 div.site:hover {
+  transition: color 0.3s ease,
+    text-shadow 0.3s ease;
   color: rgba(0, 0, 0, 1);
   text-shadow: none;
 }

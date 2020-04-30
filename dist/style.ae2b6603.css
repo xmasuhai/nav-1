@@ -35,7 +35,6 @@ img {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 20px 0;
@@ -47,7 +46,8 @@ img {
 
 /* style */
 body {
-  background: #EEE; }
+  background: #EEE;
+  background-image: url(bgp.557d2d6c.png); }
 
 .globalHeader {
   margin: 20px;
@@ -145,15 +145,37 @@ body::before {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
   z-index: 100; }
 
-div.site {
+div.site,
+div.addButton {
+  z-index: 1;
   color: rgba(0, 0, 0, 0);
-  text-shadow: 0 0 1.5px #000;
+  text-shadow: 0 0 1px #000;
   cursor: default;
-  transition: color 0.3s ease, text-shadow 0.3s ease; }
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  background-position: center top;
+  background-size: cover;
+  overflow: hidden; }
+
+div.site:after,
+div.addButton:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: -1;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+  filter: blur(20px);
+  margin: -30px; }
 
 div.site:hover {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
   color: black;
   text-shadow: none; }
 
 
-/*# sourceMappingURL=style.3488e271.css.map */
+/*# sourceMappingURL=style.ae2b6603.css.map */
