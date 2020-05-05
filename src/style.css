@@ -57,6 +57,7 @@ img {
 body {
   background: #EEE;
   background-image: url(images/bgp_min.png);
+  background-size: cover;
 }
 
 .globalHeader {
@@ -222,4 +223,9 @@ div.site:hover {
   transition: color 0.3s ease, text-shadow 0.3s ease;
   color: black;
   text-shadow: none;
+}
+
+.bgp {
+  background-image: url(images/bgp.png);
+  background-size: cover;
 }

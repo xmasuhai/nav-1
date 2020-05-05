@@ -56,6 +56,7 @@ img {
 body {
   background: #EEE; // 颜色会扩展至整个网页
   background-image: url(images/bgp_min.png);
+  background-size: cover;
 }
 
 .globalHeader {
@@ -243,4 +244,9 @@ div.site:hover {
     text-shadow 0.3s ease;
   color: rgba(0, 0, 0, 1);
   text-shadow: none;
+}
+
+.bgp {
+  background-image: url(images/bgp.png);
+  background-size: cover;
 }

@@ -126,7 +126,9 @@ $(document).on('keypress', (e) => {
 // 搜索框 键盘事件 阻止冒泡
 $('.searchForm').on('keypress', (e) => {
   e.stopPropagation()
-})
-$(function () {
-  $(body).css("backgroundImage: url(images/bgp.png);");
 });
+
+window.onload = () => {
+  $("body").addClass("bgp");
+  console.log("min");
+}

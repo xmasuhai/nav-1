@@ -47,7 +47,8 @@ img {
 /* style */
 body {
   background: #EEE;
-  background-image: url(bgp_min.4728dcc4.png); }
+  background-image: url(/bgp_min.4dbf1a1a.png);
+  background-size: cover; }
 
 .globalHeader {
   margin: 20px;
@@ -177,5 +178,9 @@ div.site:hover {
   color: black;
   text-shadow: none; }
 
+.bgp {
+  background-image: url(/bgp.e317da6e.png);
+  background-size: cover; }
 
-/*# sourceMappingURL=style.894b57f8.css.map */
+
+/*# sourceMappingURL=/style.97fcb138.css.map */
