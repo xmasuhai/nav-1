@@ -1,0 +1,234 @@
+@charset "UTF-8";
+/* css reset */
+* {
+  box-sizing: border-box;
+  border: none;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.logo img {
+  min-width: 3.5rem;
+  min-height: 3.5rem;
+}
+
+/* var placeholder */
+.globalMain .siteList > li .site, .globalMain .siteList .addButton {
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px 0;
+  position: relative;
+}
+
+.globalMain .siteList > li .site .link, .globalMain .siteList .addButton .text {
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* style */
+body {
+  background: #EEE;
+  background-image: url(/bgp_min.4dbf1a1a.png);
+  background-size: cover;
+}
+
+.globalHeader {
+  margin: 20px;
+  /*
+  @media (max-width: 500px){ // 500px以上不管
+    .searchForm{
+      background-color: red;
+    }
+  }
+  */
+}
+
+.globalHeader .searchForm {
+  display: flex;
+  justify-content: space-between;
+}
+
+.globalHeader .searchForm > input {
+  width: 100%;
+  margin-right: 10px;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.globalHeader .searchForm > button {
+  white-space: nowrap;
+  padding: 0 28px;
+  border-radius: 4px;
+  background: #008373;
+  background: linear-gradient(90deg, #008373 0%, #4285f4 100%);
+  color: white;
+  font-size: 16px;
+}
+
+@media (min-width: 500px) {
+  .globalHeader .searchForm {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 500px) {
+  .globalHeader {
+    margin: 60px 0;
+  }
+}
+
+.globalMain {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.globalMain .siteList {
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.globalMain .siteList > li {
+  margin-bottom: 20px;
+}
+
+.globalMain .siteList > li .site {
+  cursor: pointer;
+}
+
+.globalMain .siteList > li .site .logo {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 64px;
+  text-transform: uppercase;
+}
+
+.globalMain .siteList > li .site .close {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.globalMain .siteList > li .site:hover > .close {
+  visibility: visible;
+  opacity: 1;
+  transition: all 1s;
+}
+
+.globalMain .siteList .addButton .icon-wrapper {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.globalMain .siteList .addButton .icon-wrapper .icon {
+  width: 56px;
+  height: 56px;
+}
+
+@media (min-width: 500px) {
+  .globalMain .siteList {
+    margin-left: auto;
+    margin-right: -25px;
+    justify-content: flex-start;
+  }
+  .globalMain .siteList > li {
+    margin-right: 25px;
+  }
+}
+
+/* special */
+body::before {
+  content: "";
+  position: fixed;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+
+div.site,
+div.addButton {
+  z-index: 1;
+  color: transparent;
+  text-shadow: 0 0 1px #000;
+  cursor: default;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  background-position: center top;
+  background-size: cover;
+  overflow: hidden;
+}
+
+div.site:after,
+div.addButton:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: -1;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+  filter: blur(20px);
+  margin: -30px;
+}
+
+div.site:hover {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  color: black;
+  text-shadow: none;
+}
+
+.bgp {
+  background-image: url(/bgp.e317da6e.png);
+  background-size: cover;
+}
+
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */
