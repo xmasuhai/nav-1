@@ -237,5 +237,8 @@ $(document).on('keypress', function (e) {
 $('.searchForm').on('keypress', function (e) {
   e.stopPropagation();
 });
+$(function () {
+  $(body).css("backgroundImage: url(images/bgp.png);");
+});
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.c0b05a6a.js.map
+//# sourceMappingURL=main.33d6b66b.js.map

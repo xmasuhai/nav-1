@@ -127,3 +127,6 @@ $(document).on('keypress', (e) => {
 $('.searchForm').on('keypress', (e) => {
   e.stopPropagation()
 })
+$(function () {
+  $(body).css("backgroundImage: url(images/bgp.png);");
+});
