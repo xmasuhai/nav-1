@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0; }
+
+#left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.3); }
+
+#right {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 50%;
+  border: 0;
+  background: #EEE; }
+
+
+/*# sourceMappingURL=search.54050738.css.map */
