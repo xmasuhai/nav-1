@@ -169,7 +169,7 @@ var render = function render() {
 };
 
 render();
-/* 事件处理 */
+/* 添加收藏 点击事件处理 */
 
 $('.addButton').on('click', function () {
   var url = window.prompt("请输入网址");
@@ -195,8 +195,17 @@ $('.addButton').on('click', function () {
 }); // 获取焦点
 
 window.onload = function () {
-  // $('.searchInput').focus() <input autofocus>
-  $('.searchForm').attr("action", "https://baidu.com/s");
+  // $('.searchInput').focus(); // < input autofocus >
+  $('.searchForm').attr("action", "./search.html");
+  /* 监听输入 提交事件 存储输入字符 */
+
+  $('#bingGo').submit(function () {
+    var searchInput = document.getElementById("searchInput").value; // console.log(searchInput);
+
+    var string = JSON.stringify(searchInput); // console.log(string);
+
+    localStorage.setItem('searchResult', string); // console.log(localStorage);
+  });
 }; // 退出网站 用户关闭网站前触发 存到 localStorage 里
 
 
@@ -237,10 +246,10 @@ $(document).on('keypress', function (e) {
 $('.searchForm').on('keypress', function (e) {
   e.stopPropagation();
 });
-
-window.onload = function () {
+/*
+window.onload = () => {
   $("body").addClass("bgp");
   console.log("min");
-};
+} */
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.da34f361.js.map
+//# sourceMappingURL=main.a193b9d8.js.map

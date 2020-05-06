@@ -14,6 +14,7 @@ const hashMap = xObject || [{
   url: 'https://www.bilibili.com',
   logoICO: 'https://www.bilibili.com/favicon.ico'
 }]
+
 /* 显示链接 缩短 */
 const simplifyUrl = (url) => {
   return url.replace('https://', '')
@@ -60,7 +61,7 @@ const render = () => {
 }
 render()
 
-/* 事件处理 */
+/* 添加收藏 点击事件处理 */
 $('.addButton').on('click', () => {
   let url = window.prompt("请输入网址")
   /* 网址合法行判断 */
@@ -83,8 +84,20 @@ $('.addButton').on('click', () => {
 
 // 获取焦点
 window.onload = () => {
-  // $('.searchInput').focus() <input autofocus>
-  $('.searchForm').attr("action", "https://baidu.com/s")
+  // $('.searchInput').focus(); // < input autofocus >
+
+  $('.searchForm').attr("action", "./search.html");
+
+  /* 监听输入 提交事件 存储输入字符 */
+  $('#bingGo').submit(() => {
+    let searchInput = document.getElementById("searchInput").value;
+    // console.log(searchInput);
+    const string = JSON.stringify(searchInput);
+    // console.log(string);
+    localStorage.setItem('searchResult', string);
+    // console.log(localStorage);
+  });
+
 }
 
 // 退出网站 用户关闭网站前触发 存到 localStorage 里
@@ -128,7 +141,8 @@ $('.searchForm').on('keypress', (e) => {
   e.stopPropagation()
 });
 
+/*
 window.onload = () => {
   $("body").addClass("bgp");
   console.log("min");
-}
+} */
